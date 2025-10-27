@@ -1,5 +1,4 @@
 import factory
-
 from product.models import Category, Product
 
 
@@ -25,5 +24,12 @@ class ProductFactory(factory.django.DjangoModelFactory):
             for category in extracted:
                 self.category.add(category)
 
+    @factory.post_generation
+    def save_after(self, create, extracted, **kwargs):
+        """Salva manualmente após postgeneration (evita o warning do factory_boy)."""
+        if create:
+            self.save()
+
     class Meta:
         model = Product
+        skip_postgeneration_save = True
