@@ -3,15 +3,15 @@ from rest_framework.viewsets import ModelViewSet
 
 from order.models.order import Order
 from order.serializers import OrderSerializer
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class OrderViewSet(ModelViewSet):
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     serializer_class = OrderSerializer
-    queryset = Order.objects.all()
+    queryset = Order.objects.all().order_by("id")
 
-    # def create(self, request, *args, **kwargs):
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     self.perform_create(serializer)
-    #     headers = self.get_success_headers(serializer.data)
-    #     return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    class Meta:
+        ordering = ['id']
