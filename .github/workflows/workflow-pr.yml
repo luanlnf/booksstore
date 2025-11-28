@@ -1,7 +1,6 @@
 name: Python Pull Request Workflow
 on: [pull_request]
 jobs:
-
   qa:
     name: Quality check
     runs-on: ubuntu-latest
