@@ -38,7 +38,7 @@ COPY poetry.lock pyproject.toml ./
 RUN poetry config virtualenvs.create false
 
 # Instala apenas dependências principais
-RUN poetry install --no-root --without dev
+RUN poetry install --no-root --with dev
 
 # Copia o restante do projeto
 WORKDIR /app
