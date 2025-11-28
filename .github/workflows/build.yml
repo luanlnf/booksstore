@@ -51,4 +51,3 @@ jobs:
 
       - name: Run Tests
         run: docker-compose exec -T web python manage.py test
-        
