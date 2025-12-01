@@ -24,8 +24,8 @@ RUN apt-get update && \
         libpq-dev \
         python3-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
 # Instalar Poetry moderno (sem cache antigo)
+
 RUN curl -sSL https://install.python-poetry.org | python3 - && \
     ln -s /opt/poetry/bin/poetry /usr/local/bin/poetry
 
