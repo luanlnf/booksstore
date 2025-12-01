@@ -23,7 +23,7 @@ SECRET_KEY = "django-insecure-f*k@=53bc5!shef1-6w+m$-g)kspbaljz%8k4(j7iuc-u2_dyd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ebac-bookstore-app.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ebac-booksstore-app.herokuapp.com']
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
-ROOT_URLCONF = "bookstore.urls"
+ROOT_URLCONF = "booksstore.urls"
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "bookstore.wsgi.application"
+WSGI_APPLICATION = "booksstore.wsgi.application"
 
 
 # Database
