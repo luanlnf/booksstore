@@ -19,6 +19,7 @@ from django.urls import include, path, re_path
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
+    path("", views.home, name="home"),  # ← ADICIONE AQUI
     path("__debug__/", include(debug_toolbar.urls)),
     path("admin/", admin.site.urls),
     re_path("booksstore/(?P<version>(v1|v2))/", include("order.urls")),
